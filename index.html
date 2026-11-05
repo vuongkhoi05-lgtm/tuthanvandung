@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="POSEIDON SEAFOOD BUFFET - Thiên đường ẩm thực hải sản">
+    <title>POSEIDON SEAFOOD BUFFET</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
+            <a href="#" class="logo">
+                <span class="logo-icon">♆</span>
+                <span>POSEIDON</span>
+                <small>SEAFOOD BUFFET</small>
+            </a>
+
+            <nav class="menu-nav">
+                <a href="#home">Trang chủ</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#menu">Thực đơn</a>
+                <a href="#contact">Liên hệ</a>
+            </nav>
+
+            <a href="#menu" class="nav-button">Khám phá món ăn</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle">WELCOME TO POSEIDON</p>
+
+            <h1>HƯƠNG VỊ ĐẠI DƯƠNG</h1>
+
+            <p>
+                Khám phá thế giới hải sản tươi ngon
+                và tinh hoa ẩm thực đặc sắc.
+            </p>
+
+            <a href="#menu" class="main-button">
+                KHÁM PHÁ THỰC ĐƠN
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+        <div class="container about-content">
+
+            <div class="about-image">
+                <img
+                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1000"
+                    alt="Không gian nhà hàng"
+                >
+            </div>
+
+            <div class="about-text">
+                <p class="section-subtitle">VỀ CHÚNG TÔI</p>
+
+                <h2>POSEIDON SEAFOOD BUFFET</h2>
+
+                <p>
+                    Lấy cảm hứng từ vị thần biển cả Poseidon,
+                    nhà hàng mang đến hành trình khám phá
+                    ẩm thực với những món hải sản hấp dẫn.
+                </p>
+
+                <p>
+                    Từ hải sản tươi sống, sushi Nhật Bản,
+                    món nướng đến các món tráng miệng,
+                    tất cả tạo nên trải nghiệm ẩm thực phong phú.
+                </p>
+
+                <a href="#menu" class="main-button">
+                    XEM THỰC ĐƠN
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="food-section section" id="menu">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="section-subtitle">CULINARY EXPERIENCE</p>
+
+                <h2>KHÁM PHÁ THỰC ĐƠN</h2>
+
+                <p>
+                    Hàng loạt món ngon đang chờ bạn khám phá.
+                </p>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Tìm kiếm món ăn..."
+                    autocomplete="off"
+                >
+                <span>⌕</span>
+            </div>
+
+            <!-- CATEGORY -->
+            <div class="categories" id="categories">
+
+                <button class="active" data-category="all">
+                    Tất cả
+                </button>
+
+                <button data-category="seafood">
+                    Hải sản
+                </button>
+
+                <button data-category="sushi">
+                    Sushi
+                </button>
+
+                <button data-category="hotpot">
+                    Món lẩu
+                </button>
+
+                <button data-category="vietnamese">
+                    Món Việt
+                </button>
+
+                <button data-category="dessert">
+                    Tráng miệng
+                </button>
+
+                <button data-category="fried">
+                    Đồ chiên
+                </button>
+
+                <button data-category="steak">
+                    Bít tết
+                </button>
+
+            </div>
+
+            <!-- FOOD LIST -->
+            <div class="food-grid" id="foodList">
+                <p class="loading">Đang tải thực đơn...</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-content">
+
+            <p class="section-subtitle">COME AND ENJOY</p>
+
+            <h2>HẸN GẶP BẠN TẠI POSEIDON</h2>
+
+            <p>
+                Cùng gia đình và bạn bè tận hưởng
+                những khoảnh khắc ẩm thực tuyệt vời.
+            </p>
+
+            <a href="#home" class="main-button">
+                TRỞ VỀ ĐẦU TRANG
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-logo">
+                ♆ POSEIDON
+            </div>
+
+            <p>SEAFOOD BUFFET</p>
+
+            <p>
+                © 2026 POSEIDON SEAFOOD BUFFET.
+                All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- FOOD DETAIL MODAL -->
+    <div
+        class="modal"
+        id="foodModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                id="closeModal"
+                aria-label="Đóng"
+            >
+                &times;
+            </button>
+
+            <img
+                id="detailImage"
+                src=""
+                alt="Hình ảnh món ăn"
+            >
+
+            <div class="modal-info">
+
+                <p class="section-subtitle">
+                    POSEIDON SPECIAL MENU
+                </p>
+
+                <h2 id="detailName"></h2>
+
+                <div class="detail-divider"></div>
+
+                <h3>Giới thiệu món ăn</h3>
+                <p id="detailDescription"></p>
+
+                <h3>Nguyên liệu</h3>
+                <p id="detailIngredients"></p>
+
+                <h3>Đặc điểm nổi bật</h3>
+                <p id="detailFeature"></p>
+
+                <button
+                    class="main-button close-detail"
+                    id="closeDetail"
+                >
+                    ĐÓNG CHI TIẾT
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

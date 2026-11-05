@@ -1,0 +1,617 @@
+
+/* =====================================
+   1. CÀI ĐẶT CHUNG
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf5;
+    color: #2b2020;
+    line-height: 1.6;
+}
+
+:root {
+    --red: #790d16;
+    --dark-red: #45070d;
+    --gold: #d4a017;
+    --light-gold: #f5d77a;
+    --white: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 85px 0;
+}
+
+.section-subtitle {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+/* =====================================
+   2. HEADER
+===================================== */
+
+.header {
+    width: 100%;
+    background: var(--dark-red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-icon {
+    font-size: 27px;
+    text-align: center;
+}
+
+.logo small {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.menu-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.menu-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu-nav a:hover {
+    color: var(--gold);
+}
+
+.nav-button,
+.main-button {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--gold);
+    color: var(--dark-red);
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-button:hover,
+.main-button:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+/* =====================================
+   3. BANNER
+===================================== */
+
+.hero {
+    min-height: 620px;
+    background:
+        url("https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1800")
+        center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(45, 0, 5, 0.75),
+        rgba(45, 0, 5, 0.65)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    padding: 30px;
+}
+
+.hero-subtitle {
+    color: var(--light-gold);
+    letter-spacing: 6px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 68px);
+    color: var(--gold);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.hero-subtitle) {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* =====================================
+   4. GIỚI THIỆU
+===================================== */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 12px 12px 0 var(--gold);
+}
+
+.about-text h2 {
+    color: var(--red);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about-text p:not(.section-subtitle) {
+    color: #625858;
+    margin-bottom: 17px;
+}
+
+/* =====================================
+   5. KHU VỰC THỰC ĐƠN
+===================================== */
+
+.food-section {
+    background: #f7eee7;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    color: var(--red);
+    margin-bottom: 10px;
+}
+
+.section-heading > p:last-child {
+    color: #766767;
+}
+
+/* =====================================
+   6. TÌM KIẾM
+===================================== */
+
+.search-box {
+    width: 100%;
+    max-width: 550px;
+    margin: 30px auto;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+    border: 1px solid #ddd0c3;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+    background: white;
+}
+
+.search-box input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 8px rgba(212, 160, 23, 0.2);
+}
+
+.search-box span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color: var(--red);
+}
+
+/* =====================================
+   7. DANH MỤC
+===================================== */
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0 40px;
+}
+
+.categories button {
+    padding: 11px 22px;
+    background: white;
+    color: var(--red);
+    border: 1px solid #e1c7b7;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.categories button:hover,
+.categories button.active {
+    background: var(--red);
+    color: var(--gold);
+    border-color: var(--red);
+}
+
+/* =====================================
+   8. DANH SÁCH MÓN ĂN
+===================================== */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(65, 15, 15, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(65, 15, 15, 0.16);
+}
+
+.food-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.food-card:hover img {
+    transform: scale(1.04);
+}
+
+.food-info {
+    padding: 22px;
+}
+
+.food-info h3 {
+    color: var(--red);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #766767;
+    font-size: 14px;
+    min-height: 45px;
+    margin-bottom: 15px;
+}
+
+.detail-btn {
+    display: inline-block;
+    background: var(--red);
+    color: var(--gold);
+    padding: 11px 22px;
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.detail-btn:hover {
+    background: var(--gold);
+    color: var(--dark-red);
+    border-color: var(--gold);
+}
+
+.loading {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 30px;
+    color: var(--red);
+}
+
+/* =====================================
+   9. CONTACT
+===================================== */
+
+.contact-section {
+    background: linear-gradient(
+        120deg,
+        var(--dark-red),
+        var(--red)
+    );
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.contact-content h2 {
+    color: var(--gold);
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.contact-content > p:not(.section-subtitle) {
+    margin-bottom: 25px;
+}
+
+/* =====================================
+   10. FOOTER
+===================================== */
+
+.footer {
+    background: #250308;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #d5c4c4;
+    margin-top: 8px;
+}
+
+/* =====================================
+   11. POPUP CHI TIẾT MÓN ĂN
+===================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    position: relative;
+    animation: modalShow 0.3s ease;
+}
+
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content > img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.modal-info {
+    padding: 30px;
+}
+
+.modal-info h2 {
+    color: var(--red);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.modal-info h3 {
+    color: var(--red);
+    margin: 20px 0 5px;
+    font-size: 17px;
+}
+
+.modal-info p:not(.section-subtitle) {
+    color: #625858;
+}
+
+.detail-divider {
+    width: 75px;
+    height: 3px;
+    background: var(--gold);
+    margin: 15px 0;
+}
+
+.close-detail {
+    margin-top: 25px;
+}
+
+/* =====================================
+   12. RESPONSIVE TABLET
+===================================== */
+
+@media (max-width: 900px) {
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        gap: 30px;
+    }
+}
+
+/* =====================================
+   13. RESPONSIVE MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .menu-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-content > p:not(.hero-subtitle) {
+        font-size: 15px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 280px;
+    }
+
+    .about-text h2,
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-card img {
+        height: 220px;
+    }
+
+    .categories {
+        gap: 8px;
+    }
+
+    .categories button {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .contact-content h2 {
+        font-size: 27px;
+    }
+
+    .modal-content > img {
+        height: 230px;
+    }
+
+    .modal-info {
+        padding: 20px;
+    }
+
+    .modal-info h2 {
+        font-size: 24px;
+    }
+}
